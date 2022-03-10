@@ -1,0 +1,77 @@
+.hidden {
+    display: none;
+}
+#clock {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 7px black;
+    font-size: 4em;
+}
+#greeting {
+    text-align: center;
+    color: white;
+}
+form {
+    text-align: center;
+}
+
+form input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px white;
+}
+form input[type="text"]::placeholder {
+    color: white;
+    text-align: center;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+}
+
+form input[type="submit"], form input[type="button"]{
+    background-color: lightgray;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 3px gray;
+}
+form input[type="submit"]:hover {
+    background-color: lightblue;
+}
+form input[type="button"]:hover {
+    background-color: lightpink;
+}
+
+ul {
+    list-style-type: none;
+}
+ul li {
+    border-bottom: white 1px solid;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+ul li button {
+    float: right;
+    border-radius: 30px;
+    border: none;
+    
+}
+ul li button:hover {
+    background-color: gray;
+}
+
+.flex {
+    margin: 30px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex div {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    word-break: break-word;
+}

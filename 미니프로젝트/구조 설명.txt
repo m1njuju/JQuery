@@ -1,0 +1,7 @@
+HTML : 문서의 내용 - 순서
+
+CSS : 문서의 스타일 - 꾸밈 효과
+
+JS : HTML태그와 CSS의 속성을 들고와서 수정하고,
+     값을 저장(눈으로 바로 보이지 않음)
+-> console.log() / document.write() 를 이용해 출력
