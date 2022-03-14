@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        #div_box, #div_box2 {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            border: 3px solid orange;
+            margin-top: 20px;
+        }
+        #div_box2 {
+            position : fixed;
+            top: 10px;
+            right: 10px;
+            box-shadow: 2px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <button id="show_button"> 보이기</button>
+    <button id="hide_button"> 숨기기</button>
+
+    <p id="text">글자가 보이고 숨겨집니다.</p>
+
+    <button id="toggle"> 토글 </button>
+
+    <div id="text_box">
+        <p>이 요소는 div안의 p요소입니다</p>
+        <p>toggle을 통해 효과를 주었습니다</p>
+    </div>
+
+    <button id="fadein">보이기</button>
+    <button id="fadeout">숨기기</button>
+
+    <p id="fade_text"> 글자가 보여지고 숨겨집니다</p>
+
+    <button id="fadebutton">버튼에 마우스를 올리면 상자가 나타나고 사라집니다</button>
+    <div id="div_box">
+        <button id="stopbutton">멈춤</button>
+    </div>
+
+    <button id="slideDown">보이기</button>
+    <button id="slideUp">숨기기</button>
+
+    <p id="slide_text"> 글자가 보여지고 숨겨집니다</p>
+
+    <h1>고정된 div 나타내기</h1>
+    <button id="slide"> 슬라이드로 나타내기</button>
+    <div id="div_box2">
+        <button id="div_cancel">X</button>
+    </div>
+
+    <!--스크립트-->
+    <script>
+        $("#show_button").on("click",function() {
+            $("#text").show();
+        });
+
+        $("#hide_button").on("click", function(){
+            $("#text").hide();
+        });
+
+        $("#toggle").on("click",function(){
+            $("#text_box").toggle(1000);
+        });
+
+        $("#text_box").hide();
+
+        $("#fadein").on("click",function(){
+            $("#fade_text").fadeIn();
+        });
+        $("#fadeout").on("click",function(){
+            $("#fade_text").fadeOut();
+        });
+
+        $("#fadebutton").on({
+            mouseenter : function() {
+                $("#div_box").fadeIn();
+            },
+            mouseleave : function() {
+                $("#div_box").delay(1000).fadeOut();
+                $("#stopbutton").on("mouseenter",function(){
+                $("#div_box").stop();
+            });
+            }
+        });
+
+
+        $("#slideUp").on("click",function(){
+            $("#slide_text").slideUp();
+        });
+        $("#slideDown").on("click",function(){
+            $("#slide_text").slideDown();
+        });
+
+        $("#slide").on("click",function(){
+            $("#div_box2").slideToggle("slow");
+        });
+        $("#div_cancel").on("click",function(){
+            $("#div_box2").slideUp();
+        });
+    </script>
+</body>
+</html>

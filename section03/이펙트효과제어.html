@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <style>
+        #div_box, #div_box2 {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            border: 3px solid orange;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 버튼 3개-->
+    <!-- slideToggle 버튼 이벤트: click-->
+    <button id="slidetoggle">이펙트효과 버튼입니다</button>
+    <!-- stop() 버튼 -->
+    <button id="stop">이펙트 중지</button>
+    <!-- finish() 버튼 -->
+    <button id="finish">이펙트 끝내기</button>
+    <!-- 아래 div를 제어 -->
+    <div id="div_box"></div>
+
+    <button id="animate">사용자 애니메이션</button>
+    <div id="div_box2"></div>
+
+    <script>
+        $("#slidetoggle").on("click",function(){
+            $("#div_box").slideToggle(4000);
+        });
+        $("#stop").on("click",function(){
+            $("#div_box").stop();
+        });
+        $("#finish").on("click",function(){
+            $("#div_box").finish();
+        });
+
+        $("#animate").on("click",function(){
+            $("#div_box2").animate({
+                //css 속성과 값(끝날 때)
+                opacity : 0,
+                width : 0,
+                height : 0
+            }, 1000, // 진행되는 밀리초
+            function(){ // 애니메이션이 끝났을 때 실행되는 함수
+                $("#animate").text("이벤트가 끝났습니다");
+            });
+        });
+    </script>
+</body>
+</html>

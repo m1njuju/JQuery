@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <button id="mouse"> 마우스이벤트가 있는 버튼입니다 </button><br><br>
+
+    <button id="button">버튼입니다</button>
+    <p> 
+        클릭하면 list가 생성됩니다 <br>
+        마우스를 올리면 title의 색이 바뀝니다 <br>
+        마우스가 빠져나가면 원래 색으로 돌아옵니다.
+    </p>
+    <h1 id="title">list 생성되는 곳</h1>
+    <ul id="list"></ul>
+    <script>
+        $("#mouse").on({
+            // click, mouseenter도 사용 가능
+            dblclick : function() {
+                $("body").append("마우스를 더블클릭했습니다<br>");
+            },
+            mouseleave : function() {
+                $("body").append("마우스가 버튼에서 떠났습니다<br>");
+            }
+        });
+
+        $("#button").on({
+            click : function() {
+            $("ul").append($("<li>새로운 리스트가 생성되었습니다</li>"));
+            $("ul").append($("<li>").append("새로운 리스트가 생성되었습니다"));
+            },
+            mouseenter : function() {
+                $("#title").css("color","red");
+            },
+            mouseleave : function() {
+                $("#title").css("color","black");
+            }
+        });
+    </script>
+</body>
+</html>
